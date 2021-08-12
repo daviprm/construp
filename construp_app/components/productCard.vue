@@ -9,7 +9,7 @@
       <div class="hr_section">
          <hr>
       </div>
-      <p class="description_title">Description:</p>
+      <p class="description_title">Descrição:</p>
       <p class="description">
          {{product.description}}
       </p>
@@ -37,7 +37,7 @@
       props: ['product'],
       methods: {
          async destroyProduct(id) {
-            await axios.delete(`${this.$config.baseApi}/product/${id}`).then(response => {
+            await axios.delete(`http://127.0.0.1:8000/api/v1/product/${id}`).then(response => {
                this.$emit('delete', response.data);
             });
          },
